@@ -1,0 +1,64 @@
+<body class="login-page">
+
+
+    <main style="margin-left: 32%;">
+
+      <div class="login-block">
+        <h1>Create your account</h1>
+
+       
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-shipping-fast"></i></span>
+              <select [(ngModel)]="buyer" class="form-control" >
+                <option value="" disabled selected >--Select Organization--</option>
+                <option>Buyer</option>
+                <option>Seller</option>
+                <option>Bank</option>
+            
+                </select>
+    
+            </div>
+          </div>
+
+          <hr class="hr-xs">
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope ti-email"></i></span>
+              <input type="email" class="form-control" [(ngModel)]="email" placeholder="Email address" required
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+            </div>
+          </div>
+          
+          <hr class="hr-xs">
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+              <input type="text" class="form-control" [(ngModel)]="username" placeholder="User name" minlength="4">
+            </div>
+          </div>
+          
+          <hr class="hr-xs">
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock ti-unlock"></i></span>
+              <input type="password" class="form-control" [(ngModel)]="password" placeholder="Choose a password" required
+              minlength="6">
+            </div>
+          </div>
+          <div *ngIf="!email.valid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.required">Email is required.</div>
+            <div *ngIf="email.errors.pattern">Invalid email format.</div>
+          </div>  
+          <button class="btn btn-primary btn-block" (click)="registerUser()" routerLink="/login" type="submit">Sign up</button>
+
+      </div>
+
+      <div class="login-links">
+        <p class="text-center">Already have an account? <a class="txt-brand" routerLink="/login">Login</a></p>
+      </div>
+
+    </main>

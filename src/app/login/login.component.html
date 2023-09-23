@@ -1,0 +1,48 @@
+
+
+    <body class="login-page">
+      <main style="margin-left: 32%; margin-top: 30px;">
+        <div class="login-block">
+          <h1>Log into your account</h1>
+    
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-shipping-fast"></i></span>
+              <select [(ngModel)]="buyer" class="form-control">
+                <option value="" disabled selected>--Select Organization--</option>
+                <option>Buyer</option>
+                <option>Seller</option>
+                <option>Bank</option>
+              </select>
+            </div>
+          </div>
+    
+          <hr class="hr-xs">
+    
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+              <input type="text" class="form-control" [(ngModel)]="username" placeholder="User name">
+            </div>
+          </div>
+    
+          <hr class="hr-xs">
+    
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock ti-unlock"></i></span>
+              <input type="password" class="form-control" [(ngModel)]="password" placeholder="Enter a password">
+            </div>
+          </div>
+    
+          <button class="btn btn-primary btn-block" (click)="loginUser()">Sign in</button>
+    
+        </div>
+    
+        <div class="login-links">
+          <p class="text-center">Don't have an account? <a class="txt-brand" routerLink="/register">Sign up</a></p>
+        </div>
+    
+      </main>
+    </body>
+    

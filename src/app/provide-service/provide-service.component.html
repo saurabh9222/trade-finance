@@ -1,0 +1,45 @@
+<body class="login-page">
+    <main style="margin-left: 32%; margin-top: 30px;">
+        <div class="login-block">
+            <h1>Available Services</h1>
+            <div *ngIf="service == 'Buyer'" >
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="requestLc"> Request LC
+                </label><br>
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="GetLcDetails"> Get LC Details
+                </label><br>
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="GetLcHistory"> Get LC History
+                </label><br>
+            </div>
+
+            <div *ngIf="service == 'Bank'">
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="issueLc"> Issue LC
+                </label><br>
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="GetLcDetails"> Get LC Details
+                </label><br>
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="GetLcHistory"> Get LC History
+                </label><br>
+
+            </div>
+            <div *ngIf="service == 'Seller'">
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="AcceptLc"> Accept LC
+                </label><br>
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="GetLcDetails"> Get LC Details
+                </label><br>
+                <label class="radio-label">
+                    <input type="radio" name="gender" [(ngModel)]="providedServise" value="GetLcHistory"> Get LC History
+                </label><br>
+                
+            </div>
+            <button (click)="rout()" routerLink="/services-form">Proceed</button>
+        </div>
+
+    </main>
+</body>

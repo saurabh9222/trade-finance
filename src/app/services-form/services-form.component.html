@@ -1,0 +1,109 @@
+<body class="login-page">
+    <main style="margin-left: 32%; margin-top: 30px;">
+        <div *ngIf="servPro == 'requestLc'">
+            <h4 class="text-center">Request LC</h4>
+            <div class="form-group">
+                <label for="lcId">LC ID</label>
+                <input type="text" id="lcId" name="lcId" class="form-control" [(ngModel)]="formData.lcId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="date" id="expiryDate" name="expiryDate" class="form-control"
+                    [(ngModel)]="formData.expiryDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="buyer">Buyer</label>
+                <input type="text" id="buyer" name="buyer" class="form-control" [(ngModel)]="formData.buyer" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank">Bank</label>
+                <input type="text" id="bank" name="bank" class="form-control" [(ngModel)]="formData.bank" required>
+            </div>
+
+            <div class="form-group">
+                <label for="seller">Seller</label>
+                <input type="text" id="seller" name="seller" class="form-control" [(ngModel)]="formData.seller"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" class="form-control" [(ngModel)]="formData.amount"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="getRequestLc()">Submit</button>
+            <div *ngIf="flag=='true'">
+                Code: {{code}}<br>
+                Message: {{message}}
+            </div>
+        </div>
+
+        
+
+
+
+        <div *ngIf="servPro == 'issueLc'">
+            <h5 class="text-center">Issue LC</h5>
+            <div class="form-group">
+                <label for="lcId">LC ID</label>
+                <input type="text" id="lcId" name="lcId" class="form-control" [(ngModel)]="formData.lcId" required>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="getIssueLc()">Submit</button>
+            <div *ngIf="flag=='true'">
+                Code: {{code}}<br>
+                Message: {{message}}
+            </div>
+        </div>
+
+
+        <div *ngIf="servPro == 'AcceptLc'">
+            <h5 class="text-center">Accept LC</h5>
+            <div class="form-group">
+                <label for="lcId">LC ID</label>
+                <input type="text" id="lcId" name="lcId" class="form-control" [(ngModel)]="formData.lcId" required>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="getAcceptLc()">Submit</button>
+            <div *ngIf="flag=='true'">
+                Code: {{code}}<br>
+                Message: {{message}}
+            </div>
+        </div>
+
+
+
+        <div *ngIf="servPro == 'GetLcDetails'">
+            <h5 class="text-center">Get LC Details</h5>
+            <div class="form-group">
+                <label for="lcId">LC ID</label>
+                <input type="text" id="lcId" name="lcId" class="form-control" [(ngModel)]="formData.lcId" required>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="getLcDetails()">Submit</button>
+            <div *ngIf="flag=='true'">
+                <br><br>lcId: {{formData.lcId}}<br>
+                expiryDate: {{formData.expiryDate}}<br>
+                buyer: {{formData.buyer }}<br>
+                bank: {{formData.bank}}<br>
+                seller: {{formData.seller}}<br>
+                amount: {{formData.amount}}
+            </div>
+        </div>
+
+
+        <div *ngIf="servPro == 'GetLcHistory'">
+            <h5 class="text-center">Get LC History</h5>
+            <div class="form-group">
+                <label for="lcId">LC ID</label>
+                <input type="text" id="lcId" name="lcId" class="form-control" [(ngModel)]="formData.lcId" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+
+
+
+
+    </main>
+</body>
